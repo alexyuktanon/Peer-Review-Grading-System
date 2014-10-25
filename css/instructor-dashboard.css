@@ -1,0 +1,32 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+}
+#area-new-assignment {
+  padding-bottom: 20px;
+}
+/*
+.panel-heading{
+  background-color: blue !important;
+}
+.panel-body{
+  background-color: blue;
+}
+*/
+#assignment-main-desc{
+  margin-top:10px;
+  margin-bottom:0 !important;  
+}
+#assignment-main-desc td{
+  border-top: none !important;
+}
+.panel-heading{
+  background-color: white !important;
+  color: black !important;
+  border-bottom-style: none !important;
+}
+.assignment-body{
+  background-color: white;
+}
