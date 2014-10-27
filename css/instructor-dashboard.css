@@ -8,7 +8,7 @@ body {
   padding-bottom: 20px;
 }
 #assignment-main-desc{
-  margin-top:10px;
+  margin-top: 5px;
   margin-bottom:0 !important;  
 }
 #assignment-main-desc td{
@@ -21,6 +21,12 @@ body {
 }
 .assignment-body{
   background-color: white;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.panel-top-bar{
+  display: inline-block;
+  width: 100%;
 }
 .panel-title{
   font-size: 1.6em;
