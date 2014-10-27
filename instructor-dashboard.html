@@ -25,12 +25,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html" target="">Peer Review System</a>
+          <a class="navbar-brand" href="." target="">Peer Review System</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li>
-              <a href="index.html">Home</a>
+              <a href=".">Home</a>
             </li>
             <li>
             </li>
@@ -50,7 +50,7 @@
       </div>
       <div class="row" id="area-new-assignment">
         <a href="instructor-new-assignment.html" class="btn btn-primary btn-lg active" role="button">
-          <span class="glyphicon glyphicon-plus-sign"></span>
+          <span class="glyphicon glyphicon-plus-sign" style="cursor:pointer;"></span>
           Create new assignment
         </a>
       </div>
@@ -58,13 +58,13 @@
         <div class="panel panel-primary">
           <div class="panel-heading" id="assignment-1">
             <h3 class="panel-title" style="float:left;display:inline-block;">
-              <span class="glyphicon glyphicon-minus" id="button-instructor-toggle"></span>
+              <span class="glyphicon glyphicon-minus" id="button-instructor-toggle" style="cursor:pointer;"></span>
               Homework 1
             </h3>
             <div style="float:right;display:inline-block;">
-              <span class="glyphicon glyphicon-pencil" alt="Edit"></span>
-              <span class="glyphicon glyphicon-download-alt" alt="Download Sumiitted Assignments"></span>
-              <span class="glyphicon glyphicon-export" alt="Export data"></span>
+              <span class="glyphicon glyphicon-pencil" alt="Edit" id="button-edit-assignment" style="cursor:pointer;"></span>
+              <span class="glyphicon glyphicon-download-alt" alt="Download Sumiitted Assignments" style="cursor:pointer;"></span>
+              <span class="glyphicon glyphicon-export" alt="Export data" style="cursor:pointer;"></span>
               <!-- Make icon larger, change export icon, and change description later
               -->
             </div>
@@ -72,7 +72,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <label>
+                    <label >
                       Release:
                     </label>
                     <br>
@@ -97,26 +97,31 @@
             </table>
           </div>
           <div class="panel-body assignment-body" id="assignment-body-1">
-            <p>
-              <label>
+          
+          <div>
+            <label style="display:inline-block;" width="100px">
                 Maximum score:
-              </label>
+            </label>
+            <div style="display:inline-block;" id="max-score-value"> 
               10
-            </p>
-            <p>
-              <label>
+            </div> 
+          </div>
+            <div>
+            <label style="display:inline-block;"  width="100px">
                 Number of peer graders:
               </label>
+            <div style="display:inline-block;" id="num-peer-graders"> 
               3
-            </p>
-            <!-- idea: maybe horizontal -->
-            <label>
+            </div> 
+            </div>
+            <!-- idea: maybe horizontal --> 
+          <div>
+            <label style="display:inline-block;" width="100px">
               Instructions:
             </label>
-            <div class="well" style="background-color:white;border:none;border-shadow:none;-webkit-box-shadow:none;">
-              <p>
-                Hello World! Do it now!
-              </p>
+            <div class="well" style="background-color:white;border:none;border-shadow:none;-webkit-box-shadow:none;"  >  
+              <p id="instructions">  Hello World! Do it now!</p>
+            </div>
             </div>
           </div>
         </div>
