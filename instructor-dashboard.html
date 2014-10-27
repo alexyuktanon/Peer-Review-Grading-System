@@ -143,22 +143,33 @@
         </div>
       </div>
       <div class="panel-body assignment-body" id="assignment-body-1">
-        <table class="table assignment-body-desc">
-          <tbody>
-            <tr>
-              <td class="assignment-detail-label"><label>Maximum score:</label></td>
-              <td>100</td>
-            </tr>
-            <tr>
-              <td><label>Number of peer graders:</label></td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td><label>Instructions:</label></td>
-              <td>Hello World! Do it now!<br>wow<br>Download at www.ics.uci.edu</td>
-            </tr>
-          </tbody>
-        </table>
+          
+          <div>
+            <label style="display:inline-block;" width="100px">
+                Maximum score:
+            </label>
+            <div style="display:inline-block;" id="max-score-value"> 
+              10
+            </div> 
+          </div>
+            <div>
+            <label style="display:inline-block;"  width="100px">
+                Number of peer graders:
+              </label>
+            <div style="display:inline-block;" id="num-peer-graders"> 
+              3
+            </div> 
+            </div>
+            <!-- idea: maybe horizontal --> 
+          <div>
+            <label style="display:inline-block;" width="100px">
+              Instructions:
+            </label>
+            <div class="well" style="background-color:white;border:none;border-shadow:none;-webkit-box-shadow:none;"  >  
+              <p id="instructions">  Hello World! Do it now!</p>
+            </div>
+            </div>
+          </div>
         <div align="right" id="submitTable">
         
         </div>
