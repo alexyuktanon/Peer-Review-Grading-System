@@ -14,6 +14,15 @@ body {
 #assignment-main-desc td{
   border-top: none !important;
 }
+.assignment-body-desc{
+  margin-bottom:0 !important;  
+}
+.assignment-body-desc td{
+  border-top: none !important;
+}
+.assignment-detail-label{
+  width:200px !important;
+}
 .panel-heading{
   background-color: white !important;
   color: black !important;
@@ -21,8 +30,9 @@ body {
 }
 .assignment-body{
   background-color: white;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-top: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .panel-top-bar{
   display: inline-block;
@@ -30,6 +40,12 @@ body {
 }
 .panel-title{
   font-size: 1.6em;
+  float: left;
+  display: inline-block;
+}
+.panel-icon-group{
+  float: right;
+  display: inline-block;
 }
 span.glyphicon-pencil, span.glyphicon-download-alt, span.glyphicon-export{
   font-size: 1.6em !important;

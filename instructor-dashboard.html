@@ -59,11 +59,11 @@
     <div class="panel panel-primary">
       <div class="panel-heading" id="assignment-1">
         <div class="panel-top-bar">
-          <h3 class="panel-title" style="float:left;display:inline-block;">
+          <h3 class="panel-title">
             <span class="glyphicon glyphicon-minus toggle-icon" id="button-instructor-toggle"></span>
             Homework 1
           </h3>
-          <div style="float:right;display:inline-block;">
+          <div class="panel-icon-group">
             <!--yuwei: ID is added for doing edit or download for each task.-->
             <span class="glyphicon glyphicon-pencil function-icon" alt="Edit" id="0"></span>
             <span class="glyphicon glyphicon-download-alt function-icon" alt="Download Sumiitted Assignments"  id="0"></span>
@@ -141,29 +141,24 @@
             </tr>
           </tbody>
         </table>
-        <div class="panel-body assignment-body" id="assignment-body-1">
-          <p>
-            <label>
-              Maximum score:
-            </label>
-            10
-          </p>
-          <p>
-            <label>
-              Number of peer graders:
-            </label>
-            3
-          </p>
-          <!-- idea: maybe horizontal -->
-          <label>
-            Instructions:
-          </label>
-          <div class="well" style="background-color:white;border:none;border-shadow:none;-webkit-box-shadow:none;">
-            <p>
-              Hello World! Do it now!
-            </p>
-          </div>
-        </div>
+      </div>
+      <div class="panel-body assignment-body" id="assignment-body-1">
+        <table class="table assignment-body-desc">
+          <tbody>
+            <tr>
+              <td class="assignment-detail-label"><label>Maximum score:</label></td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td><label>Number of peer graders:</label></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><label>Instructions:</label></td>
+              <td>Hello World! Do it now!<br>wow<br>Download at www.ics.uci.edu</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
