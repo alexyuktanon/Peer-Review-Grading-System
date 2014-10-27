@@ -7,14 +7,6 @@ body {
 #area-new-assignment {
   padding-bottom: 20px;
 }
-/*
-.panel-heading{
-  background-color: blue !important;
-}
-.panel-body{
-  background-color: blue;
-}
-*/
 #assignment-main-desc{
   margin-top:10px;
   margin-bottom:0 !important;  
@@ -29,4 +21,16 @@ body {
 }
 .assignment-body{
   background-color: white;
+}
+.panel-title{
+  font-size: 1.6em;
+}
+span.glyphicon-pencil, span.glyphicon-download-alt, span.glyphicon-export{
+  font-size: 1.6em !important;
+}
+span.toggle-icon{
+  margin-right: 5px;
+}
+span.function-icon{
+  margin-left: 15px;
 }
