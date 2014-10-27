@@ -7,20 +7,21 @@ body {
 #area-new-assignment {
   padding-bottom: 20px;
 }
-/*
-.panel-heading{
-  background-color: blue !important;
-}
-.panel-body{
-  background-color: blue;
-}
-*/
 #assignment-main-desc{
-  margin-top:10px;
+  margin-top: 5px;
   margin-bottom:0 !important;  
 }
 #assignment-main-desc td{
   border-top: none !important;
+}
+.assignment-body-desc{
+  margin-bottom:0 !important;  
+}
+.assignment-body-desc td{
+  border-top: none !important;
+}
+.assignment-detail-label{
+  width:200px !important;
 }
 .panel-heading{
   background-color: white !important;
@@ -29,4 +30,29 @@ body {
 }
 .assignment-body{
   background-color: white;
+  padding-top: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.panel-top-bar{
+  display: inline-block;
+  width: 100%;
+}
+.panel-title{
+  font-size: 1.6em;
+  float: left;
+  display: inline-block;
+}
+.panel-icon-group{
+  float: right;
+  display: inline-block;
+}
+span.glyphicon-pencil, span.glyphicon-download-alt, span.glyphicon-export{
+  font-size: 1.6em !important;
+}
+span.toggle-icon{
+  margin-right: 5px;
+}
+span.function-icon{
+  margin-left: 15px;
 }
