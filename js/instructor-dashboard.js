@@ -40,13 +40,19 @@ function parseDatetimeString($datetimeString){
 	return datetime;
 }
 
-$(function() {
+$(document).ready(function() {
 
 	$("#button-instructor-toggle").click(function() {
 		$("#assignment-body-1").toggle("slow");
 	});
 
 	$(".glyphicon-pencil").click(function(){
+		$("#submitTable").removeClass().addClass("box box-warning").empty();
+		$("<input>",{"type":"button","value":"cancel","class":"btn small","name":"cancel"}).appendTo("#submitTable");
+		
+		$("#submitTable").append("&nbsp;&nbsp;&nbsp;&nbsp;");    
+		$("<input>",{"type":"button","value":"save","class":"btn btn-red small","name":"comfire"}).appendTo("#submitTable");
+    
 		var boxId=$(this).attr("id");
 		var release_date_span = $(".release_date_"+boxId);
 		var submission_date_span = $(".submission_date_"+boxId);
@@ -87,6 +93,8 @@ $(function() {
 		$("#realease_clock_picker_"+boxId).removeClass("hide");
 		$("#submission_clock_picker_"+boxId).removeClass("hide");
 		$("#grading_clock_picker_"+boxId).removeClass("hide");
+		
+		
 	});
 
 });
