@@ -1,167 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="shortcut icon" href="../../assets/ico/favicon.png">
-  <title>
-    Starter Template for Bootstrap
-  </title>
-  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
-  rel="stylesheet">
   
-  <link href="css/instructor-new-assignment.css" rel="stylesheet">
-  <link href="css/bootstrap-clockpicker.min.css" rel="stylesheet">
-  <link href="css/datepicker.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+    <title>
+      Starter Template for Bootstrap
+    </title>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    rel="stylesheet">
+  
+    <link href="css/instructor-new-assignment.css" rel="stylesheet">
 </head>
-
-<body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
+  
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" target="">Peer Review System</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </div>
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html" target="">Peer Review System</a>
+      <div class="page-header">
+        <h3>
+          New Assignment
+        </h3>
       </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </div>
-  <div class="container">
-    <div class="page-header">
-      <h3>
-        New Assignment
-      </h3>
-    </div>
-    <div class="row">
-      <div class="panel panel-primary">
-        <div class="panel-heading" id="assignment-1">
-          <div class="form-group">
-            <label>
-              Title:
-            </label>
-            <input type="text" class="form-control">
-            <table id="assignment-new-area" class="table">
-              <tbody>
-                <tr>
-                  <td>
-                    <label>
-                      Release:
-                    </label>
-                    <span>
-                      <div class="hide input-append date col-xs-6"  data-date-format="mm-dd-yyyy" id="realease_date_picker">
-                        <!-- rdp0 for "release_date_picker_0" -->
-                        <input class="form-control span2 rdp" size="16" type="text">
-                        <span class="add-on"><i class="icon-th"></i></span>
-                      </div>
-                      <div class="hide input-group clockpicker col-xs-6 rcp" data-autoclose="true" id="realease_clock_picker">
-                        <input type="text" class="form-control span2">
-                        <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                      </div>
-                    </span>
-                  </td>
-                  <td>
-                    <label>
-                      Submission:
-                    </label>
-                    <span>
-                      <div class="hide input-append date1 col-xs-6"  data-date-format="mm-dd-yyyy" id="submission_date_picker">
-                        <input class="form-control span2 sdp" size="16" value type="text">
-                        <span class="add-on"><i class="icon-th"></i></span>
-                      </div>
-                      <div class="hide input-group clockpicker col-xs-6 scp" data-autoclose="true" id="submission_clock_picker">
-                        <input type="text" class="form-control span2" >
-                        <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                      </div>
-                    </span>
-                  </td>
-                  <td>
-                    <label>
-                      Peer Grading:
-                    </label>
-                    <span>
-                      <div class="hide input-append date1 col-xs-6"  data-date-format="mm-dd-yyyy" id="grading_date_picker">
-                        <input class="form-control span2 gdp" size="16" value type="text">
-                        <span class="add-on"><i class="icon-th"></i></span>
-                      </div>
-                      <div class="hide input-group clockpicker col-xs-6 gcp" data-autoclose="true" id="grading_clock_picker">
-                        <input type="text" class="form-control span2">
-                        <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                      </div>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="panel-body assignment-body" id="assignment-body-1">
-            <label>
-              Maximum score:
-            </label>
-            <input type="text" class="form-control">
-            <label>
-              Number of peer graders:
-            </label>
-            <input type="text" class="form-control">
-            <label>
-              Instructions:
-            </label>
-            <textarea class="form-control"></textarea>
-          </div>
-          <div style="text-align:right;">
-            <a href="instructor-dashboard.html" class="btn btn-danger btn-lg active" role="button">
-              Discard
-            </a>              
-            <button type="submit" class="btn btn-success btn-lg" id="btn-submit">
-              Submit
-            </button>
+      <div class="row">
+        <div class="panel panel-primary">
+          <div class="panel-heading" id="assignment-1">
+            <div class="form-group">
+              <label>
+                Title:
+              </label>
+              <input type="text" class="form-control">
+              <table id="assignment-new-area" class="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <label>
+                        Release:
+                      </label>
+                      <input type="text" class="form-control">
+                    </td>
+                    <td>
+                      <label>
+                        Submission:
+                      </label>
+                      <input type="text" class="form-control">
+                    </td>
+                    <td>
+                      <label>
+                        Peer Grading:
+                      </label>
+                      <input type="text" class="form-control">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel-body assignment-body" id="assignment-body-1">
+              <label>
+                Maximum score:
+              </label>
+              <input type="text" class="form-control">
+              <label>
+                Number of peer graders:
+              </label>
+              <input type="text" class="form-control">
+              <label>
+                Instructions:
+              </label>
+              <textarea class="form-control"></textarea>
+            </div>
+            <div style="text-align:right;">
+              <a href="instructor-dashboard.html" class="btn btn-danger btn-lg active" role="button">
+                Discard
+              </a>              
+              <button type="submit" class="btn btn-success btn-lg" id="btn-submit">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- /.container -->
-  <footer class="web-footer">
-    <hr>
-    <p class="text-center">
-      © 2014 Peer Review Grading System
+    <!-- /.container -->
+    <footer class="web-footer">
+      <hr>
+      <p class="text-center">
+        © 2014 Peer Review Grading System
+      </p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
+    </script>
+    <p>
+      Instructions: Hello World! Do it now!
     </p>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-  </script>
-  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
-  </script>
-  <p>
-    Instructions: Hello World! Do it now!
-  </p>
   
-  <script src="js/instructor-new-assignment.js"></script>
-  <script src="js/instructor-dashboard.js"></script>
-  <script src="js/bootstrap-clockpicker.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/instructor-new-assignment.js"></script>
 </body>
 
 </html>
