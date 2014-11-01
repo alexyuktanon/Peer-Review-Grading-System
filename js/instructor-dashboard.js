@@ -67,13 +67,13 @@ $(document).ready(function() {
 	});
 
 	$(".glyphicon-pencil").click(function(){
-		$("#submitTable").removeClass().addClass("box box-warning").empty();
-		$("<input>",{"type":"button","value":"cancel","class":"btn small","name":"cancel"}).appendTo("#submitTable");
-		
-		$("#submitTable").append("&nbsp;&nbsp;&nbsp;&nbsp;");    
-		$("<input>",{"type":"button","value":"save","class":"btn btn-red small","name":"comfire"}).appendTo("#submitTable");
-    
 		var boxId=$(this).attr("id");
+		
+		$("#submitTable-"+boxId).removeClass().addClass("box box-warning").empty();
+		$("<input>",{"type":"button","value":"cancel","class":"btn small","name":"cancel"}).appendTo("#submitTable-"+boxId);
+		$("#submitTable-"+boxId).append("&nbsp;&nbsp;&nbsp;&nbsp;");    
+		$("<input>",{"type":"button","value":"save","class":"btn btn-red small","name":"comfirm"}).appendTo("#submitTable-"+boxId);
+		
 		var release_date_span = $(".release_date_"+boxId);
 		var submission_date_span = $(".submission_date_"+boxId);
 		var grading_date_span =$(".grading_date_"+boxId);
@@ -86,6 +86,8 @@ $(document).ready(function() {
 		release_date_span.hide();
 		submission_date_span.hide();
 		grading_date_span.hide();
+		
+		
 		// set and show date_pickers;
 		var rdp= $(".rdp"+boxId);
 		var sdp= $(".sdp"+boxId);
