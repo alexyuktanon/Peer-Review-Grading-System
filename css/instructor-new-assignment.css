@@ -4,11 +4,15 @@ body {
 .starter-template {
   padding: 40px 15px;
 }
+.panel-heading{
+  border-bottom: none;
+}
 #area-new-assignment {
   padding-bottom: 20px;
 }
 #assignment-new-area{
   margin-top:10px;
+  margin-bottom: 0;
 }
 #assignment-new-area td{
   border-top: none !important;
@@ -19,7 +23,8 @@ body {
 }
 .assignment-body{
   background-color: white;
+  padding-top: 0px;
 }
-#btn-discard{
+#btn-function-discard{
   margin-right:20px;
 }
