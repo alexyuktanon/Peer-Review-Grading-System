@@ -1,43 +1,113 @@
+/* Yuwei
+ * Global variables to store data for "reset"&"cancel"
+ * 1.ID can be only a number. Name of the element not needed.
+ */
+//var rstring;
+//var rdate;
+//var rclock;
+//var sstring;
+//var sdate;
+//var sclock;
+//var gtring;
+//var gdate;
+//var gclock;
+//var max_score;
+//var num_graders;
+//var instruction;
+
 /*
-*	Yuwei
-*	A class for encapsulate the time infomation;
-*
-*/
-function Datetime(month, day, year, hour, minute, meridiem){
-	var monthNames = {"January":1, "February":2, "March":3, "April":4, "May":5, "June":6,"July":7, "August":8, "September":9, "October":10
-	, "November":11, "December":12};
-	this.month = monthNames[month];
-	this.day = day;
-	this.year = year;
-	this.hour = hour;
-	this.minute = minute;
-	this.meridiem = meridiem;
-	this.getDate = function() {
-		return this.month+"/"+this.day+"/"+this.year;
-	};
-	// Let's set the time to a 24-hour-system, so i don't have to care about the PM AM thing.
-	this.getTime = function() {
-		return this.hour+":"+this.minute;
-	};
+ * Yuwei
+ * My toString of date
+ */
+function dateToString(date){
+	var monthNumber= ["January", "February", "March", "April", "May",
+	                  "June", "July", "August", "September", "October",
+	                  "November", "December"];
+	var hours = date.getHours();
+	var mid='AM';
+	if(hours==0){ //At 00 hours we need to show 12 am
+		hours=12;
+	}
+	else if(hours>12){
+		hours=hours%12;
+		mid='PM';
+	}
+	if(hours<10){
+		hours="0"+hours;
+	}
+	minutes = date.getMinutes();
+	if(minutes<10){
+		minutes = "0"+minutes;
+	}
+	var string = monthNumber[date.getMonth()]+" "+date.getDate()+", "+date.getFullYear()+" "+hours+":"+minutes+" "+mid;
+	return string;
 }
 
 /*
-*	Yuwei
-*	parseDatetimeString is for parsing the datetime string into a class that contains each datetime value.
-*
-*/
-function parseDatetimeString($datetimeString){
-	var arrOfDTString = $datetimeString.split(" ");
-	var month = arrOfDTString[0];
-	var day = arrOfDTString[1].replace(",","");
-	var year = arrOfDTString[2];
-	var time = arrOfDTString[3];
-	var tempArr = time.split(":");
-	var hour = tempArr[0];
-	var minute = tempArr[1];
-	var meridiem = arrOfDTString[4];
-	var datetime = new Datetime(month,day,year,hour,minute,meridiem);
-	return datetime;
+ * Yuwei
+ * function for save button
+ */
+function saveEdit(){
+	var boxId=$(this).attr("id");
+	$("#realease_date_picker_"+boxId).addClass("hide");
+	$("#submission_date_picker_"+boxId).addClass("hide");
+	$("#grading_date_picker_"+boxId).addClass("hide");
+	$("#realease_clock_picker_"+boxId).addClass("hide");
+	$("#submission_clock_picker_"+boxId).addClass("hide");
+	$("#grading_clock_picker_"+boxId).addClass("hide");
+	
+	var release_date_span = $(".release_date_"+boxId);
+	var submission_date_span = $(".submission_date_"+boxId);
+	var grading_date_span =$(".grading_date_"+boxId);
+	var rdp= $(".rdp"+boxId);
+	var sdp= $(".sdp"+boxId);
+	var gdp= $(".gdp"+boxId);
+	var rcp= $(".rcp"+boxId);
+	var scp= $(".scp"+boxId);
+	var gcp= $(".gcp"+boxId);
+	var rdval = rdp.val();
+	var sdval = sdp.val();
+	var gdval = gdp.val();
+	var rcval = rcp.val();
+	var scval = scp.val();
+	var gcval = gcp.val();
+	var rdate = new Date(rdval+" "+rcval);
+	var sdate = new Date(sdval+" "+scval);
+	var gdate = new Date(gdval+" "+gcval);
+	release_date_span.text(dateToString(rdate));
+	submission_date_span.text(dateToString(sdate));
+	grading_date_span.text(dateToString(gdate));
+	release_date_span.show();
+	submission_date_span.show();
+	grading_date_span.show();
+	$(".save_btn_"+boxId).hide();
+	$(".cancel_btn_"+boxId).hide();
+}
+
+/*
+ * Yuwei
+ * function for cancel button
+ */
+function cancelEdit(){
+	var boxId=$(this).attr("id");
+	$("#realease_date_picker_"+boxId).addClass("hide");
+	$("#submission_date_picker_"+boxId).addClass("hide");
+	$("#grading_date_picker_"+boxId).addClass("hide");
+	$("#realease_clock_picker_"+boxId).addClass("hide");
+	$("#submission_clock_picker_"+boxId).addClass("hide");
+	$("#grading_clock_picker_"+boxId).addClass("hide");
+	
+	var release_date_span = $(".release_date_"+boxId);
+	var submission_date_span = $(".submission_date_"+boxId);
+	var grading_date_span =$(".grading_date_"+boxId);
+//	release_date_span.text(dateToString(rdate));
+//	submission_date_span.text(dateToString(sdate));
+//	grading_date_span.text(dateToString(gdate));
+	release_date_span.show();
+	submission_date_span.show();
+	grading_date_span.show();
+	$(".save_btn_"+boxId).hide();
+	$(".cancel_btn_"+boxId).hide();
 }
 
 $(document).ready(function() {
@@ -53,7 +123,7 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
+
 	$("#button-instructor-toggle1").click(function() {
 		$("#assignment-body-1").toggle("slow", function() {
 			if( $("#assignment-body-1").is( ":visible" ) ){
@@ -68,42 +138,41 @@ $(document).ready(function() {
 
 	$(".glyphicon-pencil").click(function(){
 		var boxId=$(this).attr("id");
-		
+
 		$("#submitTable-"+boxId).removeClass().addClass("box box-warning").empty();
-		$("<input>",{"type":"button","value":"cancel","class":"btn small","name":"cancel"}).appendTo("#submitTable-"+boxId);
+		$("<input>",{"type":"button","value":"cancel","class":"btn small cancel_btn_"+boxId,"name":"cancel","id":boxId}).appendTo("#submitTable-"+boxId);
 		$("#submitTable-"+boxId).append("&nbsp;&nbsp;&nbsp;&nbsp;");    
-		$("<input>",{"type":"button","value":"save","class":"btn btn-red small","name":"comfirm"}).appendTo("#submitTable-"+boxId);
+		$("<input>",{"type":"button","value":"save","class":"btn btn-red small save_btn_"+boxId,"name":"comfirm","id":boxId}).appendTo("#submitTable-"+boxId);
+		//Dynamically created btn should be binded with click function;
+		$(".save_btn_"+boxId).bind("click",saveEdit);
+		$(".cancel_btn_"+boxId).bind("click",cancelEdit);
 		
 		var release_date_span = $(".release_date_"+boxId);
 		var submission_date_span = $(".submission_date_"+boxId);
 		var grading_date_span =$(".grading_date_"+boxId);
 		$prevReleaseDatetimeString = release_date_span.text().trim();
-		var releaseDatetime = parseDatetimeString($prevReleaseDatetimeString);
+		var releaseDatetime = new Date($prevReleaseDatetimeString);
+		console.log(releaseDatetime);
 		$prevSubmissionDatetimeString = submission_date_span.text().trim();
-		var submissionDatetime = parseDatetimeString($prevSubmissionDatetimeString);
+		var submissionDatetime = new Date($prevSubmissionDatetimeString);
+		console.log(submissionDatetime);
 		$prevGradingDatetimeString = grading_date_span.text().trim();
-		var gradingDatetime = parseDatetimeString($prevGradingDatetimeString);
+		var gradingDatetime = new Date($prevGradingDatetimeString);
 		release_date_span.hide();
 		submission_date_span.hide();
 		grading_date_span.hide();
-		
-		
+
 		// set and show date_pickers;
 		var rdp= $(".rdp"+boxId);
 		var sdp= $(".sdp"+boxId);
 		var gdp= $(".gdp"+boxId);
-		rdp.datepicker('setValue',releaseDatetime.getDate());
-		sdp.datepicker('setValue',submissionDatetime.getDate());
-		gdp.datepicker('setValue',gradingDatetime.getDate());
+		rdp.datepicker('setValue',(releaseDatetime.getMonth()+1)+"/"+releaseDatetime.getDate()+"/"+releaseDatetime.getFullYear());
+		sdp.datepicker('setValue',(submissionDatetime.getMonth()+1)+"/"+submissionDatetime.getDate()+"/"+submissionDatetime.getFullYear());
+		gdp.datepicker('setValue',(gradingDatetime.getMonth()+1)+"/"+gradingDatetime.getDate()+"/"+gradingDatetime.getFullYear());
 		$("#realease_date_picker_"+boxId).removeClass("hide");
 		$("#submission_date_picker_"+boxId).removeClass("hide");
 		$("#grading_date_picker_"+boxId).removeClass("hide");
-		$prevReleaseDatetimeString = release_date_span.text().trim();
-		var releaseDatetime = parseDatetimeString($prevReleaseDatetimeString);
-		$prevSubmissionDatetimeString = submission_date_span.text().trim();
-		var submissionDatetime = parseDatetimeString($prevSubmissionDatetimeString);
-		$prevGradingDatetimeString = grading_date_span.text().trim();
-		var gradingDatetime = parseDatetimeString($prevGradingDatetimeString);
+
 
 		// set and show clock_pickers;
 		var rcp= $(".rcp"+boxId);
@@ -112,30 +181,27 @@ $(document).ready(function() {
 		rcp.clockpicker();
 		scp.clockpicker();
 		gcp.clockpicker();
+		rcp.val(releaseDatetime.getHours()+":"+releaseDatetime.getMinutes());
+		scp.val(submissionDatetime.getHours()+":"+submissionDatetime.getMinutes());
+		gcp.val(gradingDatetime.getHours()+":"+gradingDatetime.getMinutes());
 		$("#realease_clock_picker_"+boxId).removeClass("hide");
 		$("#submission_clock_picker_"+boxId).removeClass("hide");
 		$("#grading_clock_picker_"+boxId).removeClass("hide");
 
-		 if($("#max-score-value_"+boxId).html()[0] != "<") {
-
-  		var score = $("#max-score-value_"+boxId).html();
-   		$("#max-score-value_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:70px\" id=\"edit-max-score\">");
-    	$("#edit-max-score").val(score.trim());
-
-    	var numGraders = $("#num-peer-graders_"+boxId).html();
-   		$("#num-peer-graders_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:50px\"  id=\"edit-num-graders\">");
-    	$("#edit-num-graders").val(numGraders.trim());
-
-   		var instructions = $("#instructions_"+boxId).html();
-   		$("#instructions_"+boxId).html("<textarea style=\"width:500px;height: 100px\" class=\"form-control\" id=\"edit-instructions\">" + instructions + "</textarea>");
-
-  		}
-
-
-
-
-		
+		//By Becky
+//		if($("#max-score-value_"+boxId).html()[0] != "<") {
+//
+//			var score = $("#max-score-value_"+boxId).html();
+//			$("#max-score-value_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:70px\" id=\"edit-max-score\">");
+//			$("#edit-max-score").val(score.trim());
+//
+//			var numGraders = $("#num-peer-graders_"+boxId).html();
+//			$("#num-peer-graders_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:50px\"  id=\"edit-num-graders\">");
+//			$("#edit-num-graders").val(numGraders.trim());
+//
+//			var instructions = $("#instructions_"+boxId).html();
+//			$("#instructions_"+boxId).html("<textarea style=\"width:500px;height: 100px\" class=\"form-control\" id=\"edit-instructions\">" + instructions + "</textarea>");
+//
+//		}
+	});
 });
-
-});
-
