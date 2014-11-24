@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+  <title>
+    Starter Template for Bootstrap
+  </title>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+  rel="stylesheet">
+  <link href="css/student-dashboard.css" rel="stylesheet">
+  <link href="css/bootstrap-clockpicker.min.css" rel="stylesheet">
+  <link href="css/datepicker.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html" target="">Peer Review System</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+  <div class="container">
+    <div class="page-header">
+      <h3>
+        Student Dashboard
+      </h3>
+    </div>
+   <div class="row">
+    <div class="panel panel-primary">
+      <div class="panel-heading" id="assignment-1">
+        <div class="panel-top-bar">
+          <h3 class="panel-title">
+            <span class="glyphicon glyphicon-minus toggle-icon" id="button-instructor-toggle"></span>
+            Homework 1
+          </h3>
+          <table id="assignment-main-desc" class="table">
+            <tbody>
+              <tr>
+                <td>
+                  <label>
+                    Release:
+                  </label>
+                  <br>
+                  <span class="release_date_0">
+                    October 10, 2014 11:59 P.M.
+                  </span>
+                  <span>
+                    <div class="hide input-append date col-lg-6"  data-date-format="mm-dd-yyyy" id="realease_date_picker_0">
+                      <!-- rdp0 for "release_date_picker_0" -->
+                      <input class="form-control span2 rdp0" size="16" type="text">
+                      <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                    <div class="hide input-group clockpicker col-lg-6 rcp0" data-autoclose="true" id="realease_clock_picker_0">
+                      <input type="text" class="form-control span2"  value="11:59">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                      </span>
+                    </div>
+                  </span>
+                </td>
+                <td>
+                  <label>
+                    Submission:
+                  </label>
+                  <br>
+                  <span class="submission_date_0">
+                    October 20, 2014 11:59 P.M.
+                  </span>
+                  <span>
+                    <div class="hide input-append date col-lg-6"  data-date-format="mm-dd-yyyy" id="submission_date_picker_0">
+                      <input class="form-control span2 sdp0" size="16" value type="text">
+                      <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                    <div class="hide input-group clockpicker col-lg-6 scp0" data-autoclose="true" id="submission_clock_picker_0">
+                      <input type="text" class="form-control span2"  value="11:59">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                      </span>
+                    </div>
+                  </span>
+                </td>
+                <td>
+                  <label>
+                    Peer Grading:
+                  </label>
+                  <br>
+                  <span class="grading_date_0">
+                    October 30, 2014 11:59 P.M.
+                  </span>
+                  <span>
+                    <div class="hide input-append date col-lg-6"  data-date-format="mm-dd-yyyy" id="grading_date_picker_0">
+                      <input class="form-control span2 gdp0" size="16" value type="text">
+                      <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                    <div class="hide input-group clockpicker col-lg-6 gcp0" data-autoclose="true" id="grading_clock_picker_0">
+                      <input type="text" class="form-control span2"  value="11:59">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                      </span>
+                    </div>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel-body assignment-body" id="assignment-body-1">
+        <table class="table assignment-body-desc">
+          <tbody>
+            <tr>
+              <td class="assignment-detail-label"><label>Status:</label></td>
+              <td>Upload Assignment</td>
+            </tr>
+            <tr>
+              <td><label>Instructions:</label></td>
+              <td>Hello World! Do it now!<br>wow<br>Download at www.ics.uci.edu</td>
+            </tr>
+            <tr>
+              <td><label for="exampleInputFile">Upload Assignment</label></td>
+              <td>
+                <div class="form-group">
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Example block-level help text here.</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Peer Grading</label><br/>Maximum score: 100</td>
+              <td>
+                <div><a href="#">abc.pdf</a> <input type="number" class="form-control" style="width:100px;" placeholder="Text input"></div>
+                <div><a href="#">eee_fasdsf.pdf</a> <input type="number" class="form-control" style="width:100px;" placeholder="Text input"></div>
+                <div><a href="#">hfewknf.pdf</a> <input type="number" class="form-control" style="width:100px;" placeholder="Text input"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div align="right" id="submitTable">
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+  <footer class="web-footer">
+    <hr>
+    <p class="text-center">
+      © 2014 Peer Review Grading System
+    </p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="js/student-dashboard.js"></script>
+  <script src="js/bootstrap-clockpicker.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+</body>
+
+</html>
