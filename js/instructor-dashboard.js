@@ -203,9 +203,9 @@ $(document).ready(function() {
 		gcp.clockpicker({
     	donetext: 'Done'
 		});
-		rcp.val(releaseDatetime.getHours()+":"+releaseDatetime.getMinutes());
-		scp.val(submissionDatetime.getHours()+":"+submissionDatetime.getMinutes());
-		gcp.val(gradingDatetime.getHours()+":"+gradingDatetime.getMinutes());
+		rcp.children('.clock-value').val(releaseDatetime.getHours()+":"+releaseDatetime.getMinutes());
+		scp.children('.clock-value').val(submissionDatetime.getHours()+":"+submissionDatetime.getMinutes());
+		gcp.children('.clock-value').val(gradingDatetime.getHours()+":"+gradingDatetime.getMinutes());
 		$("#realease_clock_picker_"+boxId).removeClass("hide");
 		$("#submission_clock_picker_"+boxId).removeClass("hide");
 		$("#grading_clock_picker_"+boxId).removeClass("hide");
