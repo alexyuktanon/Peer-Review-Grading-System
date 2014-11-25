@@ -112,26 +112,17 @@ function cancelEdit(){
 
 $(document).ready(function() {
 
-	$("#button-instructor-toggle0").click(function() {
-		$("#assignment-body-0").toggle("slow", function() {
-			if( $("#assignment-body-0").is( ":hidden" ) ){
-				$("#button-instructor-toggle0").removeClass("glyphicon-minus");
-				$("#button-instructor-toggle0").addClass("glyphicon-plus");
-			}else if( $("#assignment-body-0").is( ":visible" ) ){
-				$("#button-instructor-toggle0").removeClass("glyphicon-plus");
-				$("#button-instructor-toggle0").addClass("glyphicon-minus");				
-			}
-		});
-	});
-
-	$("#button-instructor-toggle1").click(function() {
-		$("#assignment-body-1").toggle("slow", function() {
-			if( $("#assignment-body-1").is( ":visible" ) ){
-				$("#button-instructor-toggle1").removeClass("glyphicon-plus");
-				$("#button-instructor-toggle1").addClass("glyphicon-minus");
-			}else if( $("#assignment-body-1").is( ":hidden" ) ){
-				$("#button-instructor-toggle1").removeClass("glyphicon-minus");
-				$("#button-instructor-toggle1").addClass("glyphicon-plus");				
+	//Toggle assignment box on dashboard
+	$(".button-instructor-toggle").click(function() {
+		var assignmentFullID = $(this).closest('.panel-heading').attr('id');
+		var assignmentID = assignmentFullID.substring(11);
+		$("#assignment-body-" + assignmentID).toggle("slow", function() {
+			if( $("#assignment-body-" + assignmentID).is( ":hidden" ) ){
+				$("#" + assignmentID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-minus");
+				$("#" + assignmentID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-plus");
+			}else if( $("#assignment-body-" + assignmentID).is( ":visible" ) ){
+				$("#" + assignmentID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-plus");
+				$("#" + assignmentID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-minus");				
 			}
 		});
 	});
