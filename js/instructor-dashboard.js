@@ -111,42 +111,42 @@ function cancelEdit(boxId, assignmentFullID){
 }
 
 function removeGreyIcon(assignmentFullID){
-	$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("grey").css({'cursor': "pointer"});
-	$("#" + assignmentFullID + ">.panel-top-bar>.panel-icon-group>.glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
+	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .button-instructor-toggle").removeClass("grey").css({'cursor': "pointer"});
+	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-icon-group > .glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
 }
 
 $(document).ready(function() {
 
 	//Toggle assignment box on dashboard
 	$(".button-instructor-toggle").click(function() {
-		var assignmentFullID = $(this).closest('.panel-heading').attr('id');
+		var assignmentFullID = $(this).closest('.panel').attr('id');
 		toggleAssignmentBox(assignmentFullID);
 	});
 
 	function toggleAssignmentBox(assignmentFullID){
 		var assignmentID = assignmentFullID.substring(11);
-		if($("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").hasClass("grey")){
+		if($("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .button-instructor-toggle").hasClass("grey")){
 		}else{
 			$("#assignment-body-" + assignmentID).toggle("slow", function() {
 				if( $("#assignment-body-" + assignmentID).is( ":hidden" ) ){
-					$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-minus");
-					$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-plus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .button-instructor-toggle").removeClass("glyphicon-minus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .button-instructor-toggle").addClass("glyphicon-plus");
 				}else if( $("#assignment-body-" + assignmentID).is( ":visible" ) ){
-					$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-plus");
-					$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-minus");				
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .button-instructor-toggle").removeClass("glyphicon-plus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .button-instructor-toggle").addClass("glyphicon-minus");				
 				}
 			});
 		}
 	}
 
 	$(".glyphicon-pencil").click(function(){
-		var assignmentFullID = $(this).closest('.panel-heading').attr('id');
+		var assignmentFullID = $(this).closest('.panel').attr('id');
 		if( $("#assignment-body-" + assignmentFullID.substring(11)).is( ":hidden" ) ){
 			toggleAssignmentBox(assignmentFullID);
 		}
 
 		//Add grey icons and remove pointer
-		$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("grey").css({'cursor' :"default"});
+		$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .button-instructor-toggle").addClass("grey").css({'cursor' :"default"});
 		$(this).addClass("grey").css({'cursor' :"default"});
 
 		var boxId=$(this).attr("id");
