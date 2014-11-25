@@ -10,14 +10,27 @@
     background: #ccc;
     border: 3px solid #000;
 }
+.circleType2 {
+    width: 20px;
+    height: 20px;
+    background: #F38630;
+    border: 3px solid #000;
+}
 .lineBase{
   display: block;
   float: left;
 }
 .lineType1{
-  width: calc(100% - 20px);
+  width: calc((100% - 20px)/2);
   height: 6px;
   margin-top: 7px;
   margin-bottom: 7px;
   background-color: #ccc;
+}
+.lineType2{
+  width: calc((100% - 20px)/2);
+  height: 6px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  background-color: #F38630;
 }
