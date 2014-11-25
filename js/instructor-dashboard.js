@@ -47,8 +47,7 @@ function dateToString(date){
  * Yuwei
  * function for save button
  */
-function saveEdit(){
-	var boxId=$(this).attr("id");
+function saveEdit(boxId, assignmentFullID){
 	$("#realease_date_picker_"+boxId).addClass("hide");
 	$("#submission_date_picker_"+boxId).addClass("hide");
 	$("#grading_date_picker_"+boxId).addClass("hide");
@@ -82,14 +81,14 @@ function saveEdit(){
 	grading_date_span.show();
 	$(".save_btn_"+boxId).hide();
 	$(".cancel_btn_"+boxId).hide();
+	removeGreyIcon(assignmentFullID);
 }
 
 /*
  * Yuwei
  * function for cancel button
  */
-function cancelEdit(){
-	var boxId=$(this).attr("id");
+function cancelEdit(boxId, assignmentFullID){
 	$("#realease_date_picker_"+boxId).addClass("hide");
 	$("#submission_date_picker_"+boxId).addClass("hide");
 	$("#grading_date_picker_"+boxId).addClass("hide");
@@ -108,6 +107,12 @@ function cancelEdit(){
 	grading_date_span.show();
 	$(".save_btn_"+boxId).hide();
 	$(".cancel_btn_"+boxId).hide();
+	removeGreyIcon(assignmentFullID);
+}
+
+function removeGreyIcon(assignmentFullID){
+	$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("grey").css({'cursor': "pointer"});
+	$("#" + assignmentFullID + ">.panel-top-bar>.panel-icon-group>.glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
 }
 
 $(document).ready(function() {
@@ -115,19 +120,35 @@ $(document).ready(function() {
 	//Toggle assignment box on dashboard
 	$(".button-instructor-toggle").click(function() {
 		var assignmentFullID = $(this).closest('.panel-heading').attr('id');
-		var assignmentID = assignmentFullID.substring(11);
-		$("#assignment-body-" + assignmentID).toggle("slow", function() {
-			if( $("#assignment-body-" + assignmentID).is( ":hidden" ) ){
-				$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-minus");
-				$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-plus");
-			}else if( $("#assignment-body-" + assignmentID).is( ":visible" ) ){
-				$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-plus");
-				$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-minus");				
-			}
-		});
+		toggleAssignmentBox(assignmentFullID);
 	});
 
+	function toggleAssignmentBox(assignmentFullID){
+		var assignmentID = assignmentFullID.substring(11);
+		if($("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").hasClass("grey")){
+		}else{
+			$("#assignment-body-" + assignmentID).toggle("slow", function() {
+				if( $("#assignment-body-" + assignmentID).is( ":hidden" ) ){
+					$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-minus");
+					$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-plus");
+				}else if( $("#assignment-body-" + assignmentID).is( ":visible" ) ){
+					$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-plus");
+					$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-minus");				
+				}
+			});
+		}
+	}
+
 	$(".glyphicon-pencil").click(function(){
+		var assignmentFullID = $(this).closest('.panel-heading').attr('id');
+		if( $("#assignment-body-" + assignmentFullID.substring(11)).is( ":hidden" ) ){
+			toggleAssignmentBox(assignmentFullID);
+		}
+
+		//Add grey icons and remove pointer
+		$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("grey").css({'cursor' :"default"});
+		$(this).addClass("grey").css({'cursor' :"default"});
+
 		var boxId=$(this).attr("id");
 
 		$("#submitTable-"+boxId).removeClass().addClass("box box-warning").empty();
@@ -135,8 +156,12 @@ $(document).ready(function() {
 		$("#submitTable-"+boxId).append("&nbsp;&nbsp;&nbsp;&nbsp;");    
 		$("<input>",{"type":"button","value":"save","class":"btn btn-red small save_btn_"+boxId,"name":"comfirm","id":boxId}).appendTo("#submitTable-"+boxId);
 		//Dynamically created btn should be binded with click function;
-		$(".save_btn_"+boxId).bind("click",saveEdit);
-		$(".cancel_btn_"+boxId).bind("click",cancelEdit);
+		$(".save_btn_"+boxId).on("click", function(){
+			saveEdit(boxId, assignmentFullID);
+		});
+		$(".cancel_btn_"+boxId).on("click", function(){
+			cancelEdit(boxId, assignmentFullID);
+		});
 		
 		var release_date_span = $(".release_date_"+boxId);
 		var submission_date_span = $(".submission_date_"+boxId);
