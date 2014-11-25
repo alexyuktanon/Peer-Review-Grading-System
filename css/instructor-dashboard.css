@@ -20,6 +20,10 @@ body {
 .assignment-body-desc td{
   border-top: none !important;
 }
+.assignment-timeline td{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .assignment-detail-label{
   width:200px !important;
 }

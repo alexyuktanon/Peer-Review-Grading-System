@@ -12,6 +12,7 @@
 	href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="css/instructor-dashboard.css" rel="stylesheet">
+<link href="css/share.css" rel="stylesheet">
 <link href="css/bootstrap-clockpicker.min.css" rel="stylesheet">
 <link href="css/datepicker.css" rel="stylesheet">
 </head>
@@ -93,9 +94,29 @@
 					<form action="">
 						<table id="assignment-main-desc" class="table">
 							<tbody>
+								<tr class="assignment-timeline">
+									<td>
+										<div class="circleBase circleType1"></div>
+										<div class="lineBase lineType1"></div>
+									</td>
+									<td>
+										<div class="circleBase circleType1"></div>
+										<div class="lineBase lineType1"></div>
+									</td>
+									<td>
+										<div class="circleBase circleType1"></div>
+										<div class="lineBase lineType1"></div>
+									</td>
+									<td>
+										<div class="circleBase circleType1"></div>
+									</td>
+								</tr>
 								<tr>
-									<td><label> Release: </label> <br> <span
-										class="release_date_0"> October 10, 2014 11:59 PM</span> <span>
+									<td>
+										<label>Release:</label>
+										<br>
+										<span class="release_date_0"> October 10, 2014 11:59 PM</span>
+										<span>
 											<div class="hide input-append date col-xs-5"
 												data-date-format="mm-dd-yyyy" id="realease_date_picker_0">
 												<!-- rdp0 for "release_date_picker_0" -->
@@ -109,9 +130,13 @@
 													class="glyphicon glyphicon-time"></span>
 												</span>
 											</div>
-									</span></td>
-									<td><label> Submission: </label> <br> <span
-										class="submission_date_0"> October 20, 2014 11:59 PM</span> <span>
+										</span>
+									</td>
+									<td>
+										<label>Submission:</label>
+										<br>
+										<span class="submission_date_0"> October 20, 2014 11:59 PM</span>
+										<span>
 											<div class="hide input-append date col-xs-5"
 												data-date-format="mm-dd-yyyy" id="submission_date_picker_0">
 												<input class="form-control span2 sdp0" size="16" value
@@ -125,9 +150,12 @@
 													class="glyphicon glyphicon-time"></span>
 												</span>
 											</div>
-									</span></td>
-									<td><label> Peer Grading: </label> <br> <span
-										class="grading_date_0"> October 30, 2014 11:59 PM</span> <span>
+										</span>
+									</td>
+									<td>
+										<label>Peer Grading:</label>
+										<br>
+										<span class="grading_date_0"> October 30, 2014 11:59 PM</span> <span>
 											<div class="hide input-append date col-xs-5"
 												data-date-format="mm-dd-yyyy" id="grading_date_picker_0">
 												<input class="form-control span2 gdp0" size="16" value
@@ -141,7 +169,11 @@
 													class="glyphicon glyphicon-time"></span>
 												</span>
 											</div>
-									</span></td>
+										</span>
+									</td>
+									<td>
+										<label>Finished</label>
+									</td>
 								</tr>
 							</tbody>
 						</table>
