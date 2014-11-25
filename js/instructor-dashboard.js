@@ -118,11 +118,11 @@ $(document).ready(function() {
 		var assignmentID = assignmentFullID.substring(11);
 		$("#assignment-body-" + assignmentID).toggle("slow", function() {
 			if( $("#assignment-body-" + assignmentID).is( ":hidden" ) ){
-				$("#" + assignmentID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-minus");
-				$("#" + assignmentID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-plus");
+				$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-minus");
+				$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-plus");
 			}else if( $("#assignment-body-" + assignmentID).is( ":visible" ) ){
-				$("#" + assignmentID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-plus");
-				$("#" + assignmentID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-minus");				
+				$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").removeClass("glyphicon-plus");
+				$("#" + assignmentFullID + ">.panel-top-bar>.panel-title>.button-instructor-toggle").addClass("glyphicon-minus");				
 			}
 		});
 	});
