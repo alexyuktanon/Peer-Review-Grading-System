@@ -194,15 +194,9 @@ $(document).ready(function() {
 		var rcp= $(".rcp"+boxId);
 		var scp= $(".scp"+boxId);
 		var gcp= $(".gcp"+boxId);
-		rcp.clockpicker({
-    	donetext: 'Done'
-		});
-		scp.clockpicker({
-    	donetext: 'Done'
-		});
-		gcp.clockpicker({
-    	donetext: 'Done'
-		});
+		rcp.clockpicker();
+		scp.clockpicker();
+		gcp.clockpicker();
 		rcp.children('.clock-value').val(releaseDatetime.getHours()+":"+releaseDatetime.getMinutes());
 		scp.children('.clock-value').val(submissionDatetime.getHours()+":"+submissionDatetime.getMinutes());
 		gcp.children('.clock-value').val(gradingDatetime.getHours()+":"+gradingDatetime.getMinutes());
