@@ -173,9 +173,9 @@ $(document).ready(function() {
 		var boxId=$(this).attr("id");
 
 		$("#submitTable-"+boxId).addClass("box box-warning").empty();
-		$("<input>",{"type":"button","value":"Cancel","class":"btn small cancel_btn_"+boxId,"name":"cancel","id":boxId}).appendTo("#submitTable-"+boxId);
+		$("<input>",{"type":"button","value":"Cancel","class":"btn btn-danger btn-lg cancel_btn_"+boxId,"name":"cancel","id":boxId}).appendTo("#submitTable-"+boxId);
 		$("#submitTable-"+boxId).append("<div style=\"display:inline-block;width:100px;\"></div>");    
-		$("<input>",{"type":"button","value":"Save","class":"btn btn-red small save_btn_"+boxId,"name":"comfirm","id":boxId}).appendTo("#submitTable-"+boxId);
+		$("<input>",{"type":"button","value":"Save","class":"btn btn-success btn-lg save_btn_"+boxId,"name":"comfirm","id":boxId}).appendTo("#submitTable-"+boxId);
 		//Dynamically created btn should be binded with click function;
 		$(".save_btn_"+boxId).on("click", function(){
 			saveEdit(boxId, assignmentFullID);
