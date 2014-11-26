@@ -184,8 +184,9 @@
 					<table class="table assignment-body-desc">
 						<tbody>
 							<tr>
-								<td class="assignment-detail-label"><label>Maximum
-										score:</label></td>
+								<td class="assignment-detail-label">
+									<label>Maximum score:</label>
+								</td>
 								<td>
 									<span class="max-score-static">100</span>
 									<div class="col-md-2 max-score-form hide">
@@ -347,26 +348,47 @@
 					<table class="table assignment-body-desc">
 						<tbody>
 							<tr>
-								<td class="assignment-detail-label"><label>Maximum
-										score:</label></td>
-								<td>100</td>
+								<td class="assignment-detail-label">
+									<label>Maximum score:</label>
+								</td>
+								<td>
+									<span class="max-score-static">100</span>
+									<div class="col-md-2 max-score-form hide">
+											<input type="text" class="form-control" placeholder="Maximum score">
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<td><label>Number of peer graders:</label></td>
-								<td>3</td>
+								<td>
+									<span class="peer-graders-number-static">5</span>
+									<div class="col-md-2 peer-graders-number-form hide">
+										<select class="form-control">
+										  <option>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+										</select>
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<td><label>Assignment instructions:</label></td>
 								<td>
-									You have to state the process for any usability testing.<br>
-									Justify your answer.
+									<span class="instructions-static">You have to state the process for any usability testing.<br>Justify your answer.</span>
+									<div class="col-md-8 instructions-form hide">
+										<textarea class="form-control" rows="5"></textarea>
+									</div>
 								</td>
 							</tr>
 							<tr>
 								<td><label>Review guidelines:</label></td>
 								<td>
-									For students who state the cognitive walkthrough, you should give a full score.<br>
-									Otherwise, zero points.
+									<span class="guidelines-static">For students who state the cognitive walkthrough, you should give a full score.<br>Otherwise, zero points.</span>
+									<div class="col-md-8 guidelines-form hide">
+										<textarea class="form-control" rows="5"></textarea>
+									</div>
 								</td>
 							</tr>
 						</tbody>
