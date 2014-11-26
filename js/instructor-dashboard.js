@@ -195,10 +195,8 @@ $(document).ready(function() {
 		var grading_date_span =$(".grading_date_"+boxId);
 		$prevReleaseDatetimeString = release_date_span.text().trim();
 		var releaseDatetime = new Date($prevReleaseDatetimeString);
-		console.log(releaseDatetime);
 		$prevSubmissionDatetimeString = submission_date_span.text().trim();
 		var submissionDatetime = new Date($prevSubmissionDatetimeString);
-		console.log(submissionDatetime);
 		$prevGradingDatetimeString = grading_date_span.text().trim();
 		var gradingDatetime = new Date($prevGradingDatetimeString);
 		release_date_span.hide();
@@ -242,7 +240,6 @@ $(document).ready(function() {
 		$("#" + assignmentFullID).find(".max-score-form").removeClass("hide");
 
 		var peerGradersNumberValue = $("#" + assignmentFullID).find(".peer-graders-number-static").text();
-		console.log(peerGradersNumberValue);
 		$("#" + assignmentFullID).find(".peer-graders-number-form").find("select").val(peerGradersNumberValue);
 		$("#" + assignmentFullID).find(".peer-graders-number-static").addClass("hide");
 		$("#" + assignmentFullID).find(".peer-graders-number-form").removeClass("hide");
