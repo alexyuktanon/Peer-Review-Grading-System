@@ -79,6 +79,14 @@ function saveEdit(boxId, assignmentFullID){
 	release_date_span.show();
 	submission_date_span.show();
 	grading_date_span.show();
+	$("#" + assignmentFullID).find(".max-score-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".max-score-form").addClass("hide");
+	$("#" + assignmentFullID).find(".peer-graders-number-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".peer-graders-number-form").addClass("hide");
+	$("#" + assignmentFullID).find(".instructions-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".instructions-form").addClass("hide");
+	$("#" + assignmentFullID).find(".guidelines-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".guidelines-form").addClass("hide");
 	$(".save_btn_"+boxId).hide();
 	$(".cancel_btn_"+boxId).hide();
 	removeGreyIcon(assignmentFullID);
@@ -105,6 +113,14 @@ function cancelEdit(boxId, assignmentFullID){
 	release_date_span.show();
 	submission_date_span.show();
 	grading_date_span.show();
+	$("#" + assignmentFullID).find(".max-score-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".max-score-form").addClass("hide");
+	$("#" + assignmentFullID).find(".peer-graders-number-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".peer-graders-number-form").addClass("hide");
+	$("#" + assignmentFullID).find(".instructions-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".instructions-form").addClass("hide");
+	$("#" + assignmentFullID).find(".guidelines-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".guidelines-form").addClass("hide");
 	$(".save_btn_"+boxId).hide();
 	$(".cancel_btn_"+boxId).hide();
 	removeGreyIcon(assignmentFullID);
@@ -113,6 +129,11 @@ function cancelEdit(boxId, assignmentFullID){
 function removeGreyIcon(assignmentFullID){
 	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .button-instructor-toggle").removeClass("grey").css({'cursor': "pointer"});
 	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-icon-group > .glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
+}
+
+function cleanupNewLineForDisplay(str){
+	var regex = /<br\s*[\/]?>/gi;
+	return str.replace(regex, "\n");
 }
 
 $(document).ready(function() {
@@ -203,6 +224,29 @@ $(document).ready(function() {
 		$("#realease_clock_picker_"+boxId).removeClass("hide");
 		$("#submission_clock_picker_"+boxId).removeClass("hide");
 		$("#grading_clock_picker_"+boxId).removeClass("hide");
+
+		var maxScoreValue = $("#" + assignmentFullID).find(".max-score-static").text();
+		$("#" + assignmentFullID).find(".max-score-form").find("input").val(maxScoreValue);
+		$("#" + assignmentFullID).find(".max-score-static").addClass("hide");
+		$("#" + assignmentFullID).find(".max-score-form").removeClass("hide");
+
+		var peerGradersNumberValue = $("#" + assignmentFullID).find(".peer-graders-number-static").text();
+		console.log(peerGradersNumberValue);
+		$("#" + assignmentFullID).find(".peer-graders-number-form").find("select").val(peerGradersNumberValue);
+		$("#" + assignmentFullID).find(".peer-graders-number-static").addClass("hide");
+		$("#" + assignmentFullID).find(".peer-graders-number-form").removeClass("hide");
+
+		var instructionsValue = $("#" + assignmentFullID).find(".instructions-static").html();
+		instructionsValue = cleanupNewLineForDisplay(instructionsValue);
+		$("#" + assignmentFullID).find(".instructions-form").find("textarea").val(instructionsValue);
+		$("#" + assignmentFullID).find(".instructions-static").addClass("hide");
+		$("#" + assignmentFullID).find(".instructions-form").removeClass("hide");
+		
+		var guidelinesValue = $("#" + assignmentFullID).find(".guidelines-static").html();
+		guidelinesValue = cleanupNewLineForDisplay(guidelinesValue);
+		$("#" + assignmentFullID).find(".guidelines-form").find("textarea").val(guidelinesValue);
+		$("#" + assignmentFullID).find(".guidelines-static").addClass("hide");
+		$("#" + assignmentFullID).find(".guidelines-form").removeClass("hide");
 
 		//By Becky
 //		if($("#max-score-value_"+boxId).html()[0] != "<") {

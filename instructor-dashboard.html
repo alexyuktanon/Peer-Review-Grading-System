@@ -186,25 +186,44 @@
 							<tr>
 								<td class="assignment-detail-label"><label>Maximum
 										score:</label></td>
-								<td>100</td>
+								<td>
+									<span class="max-score-static">100</span>
+									<div class="col-md-2 max-score-form hide">
+											<input type="text" class="form-control" placeholder="Maximum score">
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<td><label>Number of peer graders:</label></td>
-								<td>3</td>
+								<td>
+									<span class="peer-graders-number-static">3</span>
+									<div class="col-md-2 peer-graders-number-form hide">
+										<select class="form-control">
+										  <option>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+										</select>
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<td><label>Assignment instructions:</label></td>
 								<td>
-									Give examples of future HCI techniques/technologies.<br>
-									Justify the answer.
+									<span class="instructions-static">Give examples of future HCI techniques/technologies.<br>Justify the answer.</span>
+									<div class="col-md-8 instructions-form hide">
+										<textarea class="form-control" rows="5"></textarea>
+									</div>
 								</td>
 							</tr>
 							<tr>
 								<td><label>Review guidelines:</label></td>
 								<td>
-									If there are 1 example, minus 10 points.<br>
-									If there are 2 - 3 examples, minus 5 points.<br>
-									Other than this, give the score based from their reasons.
+									<span class="guidelines-static">If there are 1 example, minus 10 points.<br>If there are 2 - 3 examples, minus 5 points.<br>Other than this, give the score based from their reasons.</span>
+									<div class="col-md-8 guidelines-form hide">
+										<textarea class="form-control" rows="5"></textarea>
+									</div>
 								</td>
 							</tr>
 						</tbody>
