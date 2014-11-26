@@ -133,8 +133,8 @@ function cancelEdit(boxId, assignmentFullID){
 }
 
 function removeGreyIcon(assignmentFullID){
-	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").removeClass("grey").css({'cursor': "pointer"});
-	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-icon-group > .glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
+	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title").removeClass("grey").css({'cursor': "pointer"});
+	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-icon-group > a > .glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
 }
 
 function cleanupNewLineForDisplay(str){
@@ -152,15 +152,15 @@ $(document).ready(function() {
 
 	function toggleAssignmentBox(assignmentFullID){
 		var assignmentID = assignmentFullID.substring(11);
-		if($("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").hasClass("grey")){
+		if($("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title").hasClass("grey")){
 		}else{
 			$("#assignment-body-" + assignmentID).toggle("slow", function() {
 				if( $("#assignment-body-" + assignmentID).is( ":hidden" ) ){
-					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").removeClass("glyphicon-minus");
-					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").addClass("glyphicon-plus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title > .toggle-icon").removeClass("glyphicon-minus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title > .toggle-icon").addClass("glyphicon-plus");
 				}else if( $("#assignment-body-" + assignmentID).is( ":visible" ) ){
-					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").removeClass("glyphicon-plus");
-					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").addClass("glyphicon-minus");				
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title > .toggle-icon").removeClass("glyphicon-plus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title > .toggle-icon").addClass("glyphicon-minus");				
 				}
 			});
 		}
@@ -173,7 +173,7 @@ $(document).ready(function() {
 		}
 
 		//Add grey icons and remove pointer
-		$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").addClass("grey").css({'cursor' :"default"});
+		$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title").addClass("grey").css({'cursor' :"default"});
 		$(this).addClass("grey").css({'cursor' :"default"});
 
 		var boxId=$(this).attr("id");
