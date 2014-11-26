@@ -96,6 +96,15 @@ body {
   font-size: 1.6em;
   float: left;
   display: inline-block;
+  width:50%;
+}
+.toggle-icon{
+  float:left;
+  display:block;
+}
+.assignment-title-form{
+  float:left;
+  display:block;
 }
 .panel-icon-group{
   float: right;

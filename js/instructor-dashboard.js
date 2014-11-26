@@ -79,6 +79,8 @@ function saveEdit(boxId, assignmentFullID){
 	release_date_span.show();
 	submission_date_span.show();
 	grading_date_span.show();
+	$("#" + assignmentFullID).find(".assignment-title-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".assignment-title-form").addClass("hide");
 	$("#" + assignmentFullID).find(".max-score-static").removeClass("hide");
 	$("#" + assignmentFullID).find(".max-score-form").addClass("hide");
 	$("#" + assignmentFullID).find(".peer-graders-number-static").removeClass("hide");
@@ -113,6 +115,8 @@ function cancelEdit(boxId, assignmentFullID){
 	release_date_span.show();
 	submission_date_span.show();
 	grading_date_span.show();
+	$("#" + assignmentFullID).find(".assignment-title-static").removeClass("hide");
+	$("#" + assignmentFullID).find(".assignment-title-form").addClass("hide");
 	$("#" + assignmentFullID).find(".max-score-static").removeClass("hide");
 	$("#" + assignmentFullID).find(".max-score-form").addClass("hide");
 	$("#" + assignmentFullID).find(".peer-graders-number-static").removeClass("hide");
@@ -224,6 +228,11 @@ $(document).ready(function() {
 		$("#realease_clock_picker_"+boxId).removeClass("hide");
 		$("#submission_clock_picker_"+boxId).removeClass("hide");
 		$("#grading_clock_picker_"+boxId).removeClass("hide");
+
+		var titleValue = $("#" + assignmentFullID).find(".assignment-title-static").text();
+		$("#" + assignmentFullID).find(".assignment-title-form").find("input").val(titleValue);
+		$("#" + assignmentFullID).find(".assignment-title-static").addClass("hide");
+		$("#" + assignmentFullID).find(".assignment-title-form").removeClass("hide");
 
 		var maxScoreValue = $("#" + assignmentFullID).find(".max-score-static").text();
 		$("#" + assignmentFullID).find(".max-score-form").find("input").val(maxScoreValue);
