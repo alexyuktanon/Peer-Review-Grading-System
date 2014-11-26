@@ -128,7 +128,7 @@ function cancelEdit(boxId, assignmentFullID){
 
 function removeGreyIcon(assignmentFullID){
 	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").removeClass("grey").css({'cursor': "pointer"});
-	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-icon-group > .toggle-icon").removeClass("grey").css({'cursor': "pointer"});
+	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-icon-group > .glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
 }
 
 function cleanupNewLineForDisplay(str){
