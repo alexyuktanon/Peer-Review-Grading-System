@@ -91,6 +91,7 @@ function saveEdit(boxId, assignmentFullID){
 	$("#" + assignmentFullID).find(".guidelines-form").addClass("hide");
 	$(".save_btn_"+boxId).hide();
 	$(".cancel_btn_"+boxId).hide();
+	$("#" + assignmentFullID).find(".btn-delete-assignment").hide();
 	removeGreyIcon(assignmentFullID);
 }
 
@@ -127,6 +128,7 @@ function cancelEdit(boxId, assignmentFullID){
 	$("#" + assignmentFullID).find(".guidelines-form").addClass("hide");
 	$(".save_btn_"+boxId).hide();
 	$(".cancel_btn_"+boxId).hide();
+	$("#" + assignmentFullID).find(".btn-delete-assignment").hide();
 	removeGreyIcon(assignmentFullID);
 }
 
@@ -257,6 +259,8 @@ $(document).ready(function() {
 		$("#" + assignmentFullID).find(".guidelines-static").addClass("hide");
 		$("#" + assignmentFullID).find(".guidelines-form").removeClass("hide");
 
+		$("#" + assignmentFullID).find(".btn-delete-assignment").show();
+
 		//By Becky
 //		if($("#max-score-value_"+boxId).html()[0] != "<") {
 //
@@ -272,5 +276,11 @@ $(document).ready(function() {
 //			$("#instructions_"+boxId).html("<textarea style=\"width:500px;height: 100px\" class=\"form-control\" id=\"edit-instructions\">" + instructions + "</textarea>");
 //
 //		}
+	});
+
+	$(".btn-permanetly-delete-assignment").click(function() {
+		var assignmentFullID = $(this).closest('.panel').attr('id');
+		$("#" + assignmentFullID).find(".modal").modal("hide");
+		$("#" + assignmentFullID).hide();
 	});
 });
