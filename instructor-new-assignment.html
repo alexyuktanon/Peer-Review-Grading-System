@@ -55,10 +55,10 @@
         <div class="panel-heading" id="assignment-1">
           <div class="form-group">
               <div class="row">
-              <label for="newassignmentTitle" class="col-sm-2 control-label">
+              <label for="newassignmentTitle" class="col-sm-3 control-label">
                 Title:
               </label>
-              <div class="col-sm-10">
+              <div class="col-sm-9">
                 <input type="text" class="form-control" id="newassignmentTitle" placeholder="Title">
               </div>
             </div>
@@ -130,48 +130,55 @@
 
         <div class="panel-body assignment-body" id="assignment-body-1">
           <div class="form-group row">
-            <label for="inputMaximumscore" class="col-sm-2" control-label>
+            <label for="inputMaximumscore" class="col-sm-3" control-label>
               Maximum score:
             </label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputMaximumScore" placeholder="Maximun score peer graders can give">
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="inputMaximumScore" placeholder="Maximun score">
             </div>
           </div>
 
           <div class="form-group row">
-            <label for="inputNumberofgraders" class="col-sm-2" control-label>
+            <label for="inputNumberofgraders" class="col-sm-3" control-label>
               Number of peer graders:
             </label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputNumberofgraders" placeholder="Number of graders">
+          
+            <div class="col-sm-2 ">
+              <select class= "form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
             </div>
           </div>
           
           <div class="form-group row">
-            <label for="inputInstructions" class="col-sm-2" control-label>
+            <label for="inputInstructions" class="col-sm-3" control-label>
               Assignment Instructions:
             </label>
-            <div class="col-sm-10">
-              <textarea class="form-control" id="inputInstructions" placeholder="Type in instructions for assignments here"></textarea>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="inputInstructions" placeholder="Type in instructions for assignments here" rows="5"></textarea>
             </div>
           </div>
 
            <div class="form-group row">
-            <label for="inputGuidelines" class="col-sm-2" control-label>
+            <label for="inputGuidelines" class="col-sm-3" control-label>
               Review Guidelines
             </label>
-            <div class="col-sm-10">
-              <textarea class="form-control" id="iinputGuidelines" placeholder="Type in guidelines for peer reviewing here"></textarea>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="iinputGuidelines" placeholder="Type in guidelines for peer reviewing here" rows="5"></textarea>
             </div>
           </div>
-
         </div>
-        <div style="text-align:right;">
+
+        <div style="text-align:center;margin-bottom:30px;">
           <a href="instructor-dashboard.html" class="btn btn-danger btn-lg active" id="btn-function-discard" role="button">
-            Discard
+            Cancel
           </a>              
           <button type="submit" class="btn btn-success btn-lg" id="btn-submit">
-            Submit
+            Save
           </button>
         </div>
       </div>
@@ -188,9 +195,6 @@
   </script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
   </script>
-  <p>
-    Instructions: Hello World! Do it now!
-  </p>
   
   <script src="js/instructor-new-assignment.js"></script>
   <script src="js/instructor-dashboard.js"></script>
