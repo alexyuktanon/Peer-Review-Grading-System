@@ -259,20 +259,20 @@ $(document).ready(function() {
 		$("#" + assignmentFullID).find(".btn-delete-assignment").show();
 
 		//By Becky
-//		if($("#max-score-value_"+boxId).html()[0] != "<") {
-//
-//			var score = $("#max-score-value_"+boxId).html();
-//			$("#max-score-value_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:70px\" id=\"edit-max-score\">");
-//			$("#edit-max-score").val(score.trim());
-//
-//			var numGraders = $("#num-peer-graders_"+boxId).html();
-//			$("#num-peer-graders_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:50px\"  id=\"edit-num-graders\">");
-//			$("#edit-num-graders").val(numGraders.trim());
-//
-//			var instructions = $("#instructions_"+boxId).html();
-//			$("#instructions_"+boxId).html("<textarea style=\"width:500px;height: 100px\" class=\"form-control\" id=\"edit-instructions\">" + instructions + "</textarea>");
-//
-//		}
+		if($("#max-score-value_"+boxId).html()[0] != "<") {
+
+			var score = $("#max-score-value_"+boxId).html();
+			$("#max-score-value_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:70px\" id=\"edit-max-score\">");
+			$("#edit-max-score").val(score.trim());
+
+			var numGraders = $("#num-peer-graders_"+boxId).html();
+			$("#num-peer-graders_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:50px\"  id=\"edit-num-graders\">");
+			$("#edit-num-graders").val(numGraders.trim());
+
+			var instructions = $("#instructions_"+boxId).html();
+			$("#instructions_"+boxId).html("<textarea style=\"width:500px;height: 100px\" class=\"form-control\" id=\"edit-instructions\">" + instructions + "</textarea>");
+
+		}
 	});
 
 	$(".btn-permanetly-delete-assignment").click(function() {

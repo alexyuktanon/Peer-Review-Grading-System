@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-y:scroll;">
 
 <head>
   <meta charset="utf-8">
@@ -8,11 +8,12 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="../../assets/ico/favicon.png">
   <title>
-    Starter Template for Bootstrap
+    Student Dashboard
   </title>
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
   rel="stylesheet">
   <link href="css/student-dashboard.css" rel="stylesheet">
+  <link href="css/share.css" rel="stylesheet">
   <link href="css/bootstrap-clockpicker.min.css" rel="stylesheet">
   <link href="css/datepicker.css" rel="stylesheet">
 </head>
@@ -57,8 +58,52 @@
             <span class="glyphicon glyphicon-minus toggle-icon" id="button-instructor-toggle"></span>
             Homework 1
           </h3>
+
+           <button type="button" class="btn btn-default" style="border:0px; float:right; margin:0px" data-toggle="modal"
+                data-target="#myModal">
+              <span class="glyphicon glyphicon-question-sign" aria-hidden="true" ></span> Instructions
+          </button>
+          
+      
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+              aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Homework 1</h4>
+                  </div>
+                  <div class="modal-body">...</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           <table id="assignment-main-desc" class="table">
             <tbody>
+              <tr class="assignment-timeline">
+                  <td>
+                    <div class="circleBase circleType2"></div>
+                    <div class="lineBase lineType2"></div>
+                    <div class="lineBase lineType2"></div>
+                  </td>
+                  <td>
+                    <div class="circleBase circleType2"></div>
+                    <div class="lineBase lineType2"></div>
+                    <div class="lineBase lineType1"></div>
+                  </td>
+                  <td>
+                    <div class="circleBase circleType1"></div>
+                    <div class="lineBase lineType1"></div>
+                    <div class="lineBase lineType1"></div>
+                  </td>
+                  <td>
+                    <div class="circleBase circleType1"></div>
+                  </td>
+              </tr>
               <tr>
                 <td>
                   <label>
@@ -66,7 +111,7 @@
                   </label>
                   <br>
                   <span class="release_date_0">
-                    October 10, 2014 11:59 P.M.
+                    October 14, 2014 11:59 P.M.
                   </span>
                   <span>
                     <div class="hide input-append date col-lg-6"  data-date-format="mm-dd-yyyy" id="realease_date_picker_0">
@@ -124,44 +169,56 @@
                     </div>
                   </span>
                 </td>
+                <td>
+                    <label>Finished</label>
+                  </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <div class="panel-body assignment-body" id="assignment-body-1">
-        <table class="table assignment-body-desc">
+        <table class="table assignment-body-desc" width="100%">
           <tbody>
             <tr>
-              <td class="assignment-detail-label"><label>Status:</label></td>
-              <td>Upload Assignment</td>
+              <td class="assignment-detail-label" ><label style="float:right">Status</label></td>
+              <td>Submit Assignment</td>
             </tr>
             <tr>
-              <td><label>Instructions:</label></td>
-              <td>Hello World! Do it now!<br>wow<br>Download at www.ics.uci.edu</td>
-            </tr>
-            <tr>
-              <td><label for="exampleInputFile">Upload Assignment</label></td>
+              <td><label for="exampleInputFile" style="float:right">Upload Assignment</label></td>
               <td>
                 <div class="form-group">
                   <input type="file" id="exampleInputFile">
-                  <p class="help-block">Example block-level help text here.</p>
                 </div>
               </td>
             </tr>
             <tr>
-              <td><label>Peer Grading</label><br/>Maximum score: 100</td>
+              <td><label style="float:right">Your Submission</label></td>
+              <td><a href="#">qwerty.pdf</a></td>
+            </tr>
+          <tr></tr>
+            <tr>
+              <td><hr></td><td><hr></td>
+              </tr>
               <td>
-                <div><a href="#">abc.pdf</a> <input type="number" class="form-control" style="width:100px;" placeholder="Text input"></div>
-                <div><a href="#">eee_fasdsf.pdf</a> <input type="number" class="form-control" style="width:100px;" placeholder="Text input"></div>
-                <div><a href="#">hfewknf.pdf</a> <input type="number" class="form-control" style="width:100px;" placeholder="Text input"></div>
+                <label style="float:right">Peer Grading</label><br/><p style="float:right">Maximum score: 100</p></td>
+              <td>
+                <table>
+                <tr><td><a href="#">abc.pdf</a></td><td> <input type="number" class="form-control" style="width:100px; display:inline-block;" placeholder="Score"></td><td><a><p style="padding-top:5px;">Comment</p></a></td><td></td></tr>
+                <tr><td><a href="#">eee_fasdsf.pdf</a></td><td> <input type="number" class="form-control" style="width:100px; display:inline-block;" placeholder="Score"></td><td><a><p style="padding-top:5px;">Comment</p></a></td><td></td>
+                 <td>
+                   <a type="button" class="btn btn-default" style="border:0px; float:right; margin-left:40px;" href="student-view-assignment.html"
+                     target="_blank">
+                    View All <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span> 
+                   </a>
+                  <td></tr>
+                <tr><td><a href="#">hfewknf.pdf</a></td><td> <input type="number" disabled class="form-control" style="width:100px; display:inline-block;" placeholder="Score"></td><td><a><p style="padding-top:5px;">Comment</p></a></td><td></td></tr>
+                </table>
               </td>
             </tr>
           </tbody>
         </table>
-        <div align="right" id="submitTable">
-        
-        </div>
+      
       </div>
     </div>
   </div>
