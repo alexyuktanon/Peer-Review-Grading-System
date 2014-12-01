@@ -23,6 +23,11 @@ body {
 .assignment-detail-label{
   width:200px !important;
 }
+
+.assignment-timeline td{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .panel-heading{
   background-color: white !important;
   color: black !important;

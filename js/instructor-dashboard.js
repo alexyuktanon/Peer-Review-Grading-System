@@ -133,8 +133,8 @@ function cancelEdit(boxId, assignmentFullID){
 }
 
 function removeGreyIcon(assignmentFullID){
-	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").removeClass("grey").css({'cursor': "pointer"});
-	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-icon-group > .glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
+	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title").removeClass("grey").css({'cursor': "pointer"});
+	$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-icon-group > a > .glyphicon-pencil").removeClass("grey").css({'cursor': "pointer"});
 }
 
 function cleanupNewLineForDisplay(str){
@@ -152,15 +152,15 @@ $(document).ready(function() {
 
 	function toggleAssignmentBox(assignmentFullID){
 		var assignmentID = assignmentFullID.substring(11);
-		if($("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").hasClass("grey")){
+		if($("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title").hasClass("grey")){
 		}else{
 			$("#assignment-body-" + assignmentID).toggle("slow", function() {
 				if( $("#assignment-body-" + assignmentID).is( ":hidden" ) ){
-					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").removeClass("glyphicon-minus");
-					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").addClass("glyphicon-plus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title > .toggle-icon").removeClass("glyphicon-minus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title > .toggle-icon").addClass("glyphicon-plus");
 				}else if( $("#assignment-body-" + assignmentID).is( ":visible" ) ){
-					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").removeClass("glyphicon-plus");
-					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").addClass("glyphicon-minus");				
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title > .toggle-icon").removeClass("glyphicon-plus");
+					$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title > .toggle-icon").addClass("glyphicon-minus");				
 				}
 			});
 		}
@@ -173,7 +173,7 @@ $(document).ready(function() {
 		}
 
 		//Add grey icons and remove pointer
-		$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > .panel-title > .toggle-icon").addClass("grey").css({'cursor' :"default"});
+		$("#" + assignmentFullID + "> .panel-heading > .panel-top-bar > a > .panel-title").addClass("grey").css({'cursor' :"default"});
 		$(this).addClass("grey").css({'cursor' :"default"});
 
 		var boxId=$(this).attr("id");
@@ -259,20 +259,20 @@ $(document).ready(function() {
 		$("#" + assignmentFullID).find(".btn-delete-assignment").show();
 
 		//By Becky
-//		if($("#max-score-value_"+boxId).html()[0] != "<") {
-//
-//			var score = $("#max-score-value_"+boxId).html();
-//			$("#max-score-value_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:70px\" id=\"edit-max-score\">");
-//			$("#edit-max-score").val(score.trim());
-//
-//			var numGraders = $("#num-peer-graders_"+boxId).html();
-//			$("#num-peer-graders_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:50px\"  id=\"edit-num-graders\">");
-//			$("#edit-num-graders").val(numGraders.trim());
-//
-//			var instructions = $("#instructions_"+boxId).html();
-//			$("#instructions_"+boxId).html("<textarea style=\"width:500px;height: 100px\" class=\"form-control\" id=\"edit-instructions\">" + instructions + "</textarea>");
-//
-//		}
+		if($("#max-score-value_"+boxId).html()[0] != "<") {
+
+			var score = $("#max-score-value_"+boxId).html();
+			$("#max-score-value_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:70px\" id=\"edit-max-score\">");
+			$("#edit-max-score").val(score.trim());
+
+			var numGraders = $("#num-peer-graders_"+boxId).html();
+			$("#num-peer-graders_"+boxId).html("<input type=\"text\" class=\"form-control\" style=\"margin:10px; width:50px\"  id=\"edit-num-graders\">");
+			$("#edit-num-graders").val(numGraders.trim());
+
+			var instructions = $("#instructions_"+boxId).html();
+			$("#instructions_"+boxId).html("<textarea style=\"width:500px;height: 100px\" class=\"form-control\" id=\"edit-instructions\">" + instructions + "</textarea>");
+
+		}
 	});
 
 	$(".btn-permanetly-delete-assignment").click(function() {

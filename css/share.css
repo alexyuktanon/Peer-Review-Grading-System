@@ -34,7 +34,9 @@
   margin-bottom: 7px;
   background-color: #F38630;
 }
-
+.black{
+  color: #000000;
+}
 .grey{
   color:#ADADAD;
 }
