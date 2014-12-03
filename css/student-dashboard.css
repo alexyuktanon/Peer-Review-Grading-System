@@ -107,3 +107,6 @@ span.toggle-icon{
 span.function-icon{
   margin-left: 15px;
 }
+.toggle-icon{
+  cursor: pointer;
+}
