@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
     <title>
-      Starter Template for Bootstrap
+      Peer Review System
     </title>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
     rel="stylesheet">
@@ -48,18 +48,18 @@
           </div>
         </div>
         <div class="col-md-4 col-md-offset-1">
-          <form class="form-signin" role="form" action="instructor-dashboard.html">
+          <form class="form-signin" role="form" action="#" id="form-main-login">
             <h2 class="form-signin-heading">
               Please sign in to continue
             </h2>
             <input type="email" class="form-control" placeholder="Email address" required=""
-            autofocus="">
-            <input type="password" class="form-control" placeholder="Password" required="">
+            autofocus="" id="form-email">
+            <input type="password" class="form-control" placeholder="Password" required="" id="form-password">
             <label class="checkbox">
               <input type="checkbox" value="remember-me">
               Remember me
             </label>
-            <button type="submit" class="btn btn-lg btn-block btn-primary">
+            <button class="btn btn-lg btn-block btn-primary" id="btn-login">
               Sign in
             </button>
           </form>
@@ -75,8 +75,10 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
+    <script src="js/index.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
     </script>
+    
   </body>
 
 </html>
