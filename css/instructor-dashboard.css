@@ -28,13 +28,13 @@ body {
   width:200px !important;
 }
 .panel-heading{
-  background-color: white !important;
+  background-color: #ecf0f1 !important;
   color: black !important;
   border-bottom-style: none !important;
   padding-bottom: 5px; 
 }
 .assignment-body{
-  background-color: white;
+  background-color: #ecf0f1;
   padding-top: 0;
 }
 #btn-new-assignment{
