@@ -57,8 +57,8 @@
 }
 
 .assignment-timeline td{
-
   padding-bottom: 0px !important;
+  width: 33% !important;
 }
 
 .timeline-description td{
